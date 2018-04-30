@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import InfoTab from './InfoTab'
-import { useSample } from '../contexts/movieInfoContext';
+import { useMovieInfo } from '../contexts/movieInfoContext';
 
 class Posts extends Component{
 
@@ -37,4 +37,4 @@ class Posts extends Component{
   }
 }
 
-export default useSample(Posts);
+export default useMovieInfo(Posts);
