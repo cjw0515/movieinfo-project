@@ -1,18 +1,33 @@
 import React, { Component, createContext } from 'react';
+import axios from 'axios';
 
 const Context = createContext(); 
 const { Provider, Consumer: MovieInfoConsumer } = Context; 
 
 class MovieInfoProvider extends Component {
+
+  componentDidMount(){
+    this.actions.getMovies();
+  }
+
   state = {
-    value: '기본값입니다'
+    movies:[]
   }
 
   actions = {
     setValue: (value) => {
       this.setState({value});
+    },
+    getMovies: (query) => {
+      axios.get('/api/movie/')
+      .then(
+        response => {
+          console.log(response.data);
+        }
+      )
     }
   }
+
 
   render() {
     const { state, actions } = this;

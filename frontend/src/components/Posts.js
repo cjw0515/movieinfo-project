@@ -19,7 +19,7 @@ class Posts extends Component{
                   <a href="#" class="image fit"><img src="images/램페이지.jpg" alt="" /></a>
                 </ul>
                 <ul>
-                  액선, 모험|한국|등급R                  
+                  액선, 모험|한국|등급R
                 </ul>
               </div>
               <div class="8u 12u$(small)">
