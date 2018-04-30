@@ -8,7 +8,7 @@ class Main extends Component{
   render(){
     return(
       <div id="main">
-          <article class="post featured">
+          {/* <article class="post featured">
             <header class="major">
               <span class="date">April 25, 2017</span>
               <h3><a href="#">And this is a<br />
@@ -21,7 +21,7 @@ class Main extends Component{
             <ul class="actions">
               <li><button class="button big">더보기</button></li>
             </ul>
-          </article>
+          </article> */}
         <Posts/>
         <Footer/>
       </div>

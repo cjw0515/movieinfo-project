@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import InfoTab from './InfoTab'
+import { useSample } from '../contexts/movieInfoContext';
 
 class Posts extends Component{
 
   render(){
+    console.log(this.props);
     return(
       <div>
         <section class="posts">
@@ -17,7 +19,7 @@ class Posts extends Component{
                   <a href="#" class="image fit"><img src="images/램페이지.jpg" alt="" /></a>
                 </ul>
                 <ul>
-                  액선, 모험|한국|등급R
+                  액선, 모험|한국|등급R                  
                 </ul>
               </div>
               <div class="8u 12u$(small)">
@@ -35,4 +37,4 @@ class Posts extends Component{
   }
 }
 
-export default Posts;
+export default useSample(Posts);
