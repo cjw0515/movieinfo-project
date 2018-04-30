@@ -7,7 +7,7 @@ const { Provider, Consumer: MovieInfoConsumer } = Context;
 class MovieInfoProvider extends Component {
 
   componentDidMount(){
-    this.actions.getMovies();
+    this.actions.getMovies('강');
   }
 
   state = {
@@ -19,10 +19,14 @@ class MovieInfoProvider extends Component {
       this.setState({value});
     },
     getMovies: (query) => {
-      axios.get('/api/movie/')
+      axios.get('/api/movie/?query='+query)
       .then(
         response => {
-          console.log(response.data);
+          const movies = response.data.items;
+          // console.log(movies)
+          this.setState({
+            movies: movies
+          })
         }
       )
     }
@@ -48,8 +52,8 @@ function useMovieInfo(WrappedComponent) {
           ({ state, actions }) => {
             return (
               <WrappedComponent
-                value={state.value}
-                setValue={actions.setValue}
+                state={state}
+                actions={actions}
               />
             )
           }

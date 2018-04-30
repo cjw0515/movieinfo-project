@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
-import Posts from './Posts'
+import Post from './Post'
 import Footer from './Footer'
-
+import { useMovieInfo } from '../contexts/movieInfoContext'
 
 class Main extends Component{
 
   render(){
+    
+    const movies = this.props.state.movies;
+    console.log("movies:", movies);
+    const postList = movies.map( (movie, index) => (
+      <Post
+        key={ index }
+        image={ movie.image }        
+        title={ movie.title }
+        pubDate={ movie.pubDate }
+        director={ movie.director }
+      />
+    ));
+
     return(
       <div id="main">
           {/* <article class="post featured">
@@ -22,11 +35,11 @@ class Main extends Component{
               <li><button class="button big">더보기</button></li>
             </ul>
           </article> */}
-        <Posts/>
+        {postList}
         <Footer/>
       </div>
     )
   }
 }
 
-export default Main;
+export default useMovieInfo(Main);
